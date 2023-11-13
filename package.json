@@ -1,0 +1,25 @@
+{
+  "name": "go-clean",
+  "version": "1.0.0",
+  "description": "Your storage is full of messy pokémon, go clean!",
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc && cp -a dist/index.js node_modules/.bin",
+    "dev": "npm run build && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": "./dist/index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^21.5.1"
+  },
+  "puppeteer": {
+    "logLevel": "error"
+  },
+  "devDependencies": {
+    "@tsconfig/node-lts": "^18.12.5",
+    "@types/node": "^20.9.0",
+    "typescript": "^5.2.2"
+  }
+}

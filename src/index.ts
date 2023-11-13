@@ -190,7 +190,7 @@ download(greatLeague)
     const cp10000 = stringbuilder().addPokemon(master).cap(50).list();
 
     writeFile(
-      'src/resources/search-strings.json',
+      'src/search-strings.json',
       JSON.stringify(
         {
           greatLeague: {

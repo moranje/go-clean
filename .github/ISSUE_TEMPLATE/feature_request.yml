@@ -1,0 +1,15 @@
+name: Feature request
+description: Would you like to add something new?
+title: 'feat: '
+labels: ['feature']
+assignees:
+  - moranje
+  - jorisj
+body:
+  - type: textarea
+    id: feature
+    attributes:
+      label: What would you like implement?
+      description: Describe how this should work.
+    validations:
+      required: true

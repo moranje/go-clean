@@ -1,0 +1,30 @@
+name: Bug report
+description: Explain what happened
+title: 'fix: '
+labels: ['bug', 'triage']
+assignees:
+  - moranje
+  - jorisj
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for letting us know you've found a bug."
+  - type: textarea
+    id: should-happen
+    attributes:
+      label: What should have happeded?
+      description: If things were working as expected.
+    validations:
+      required: true
+  - type: textarea
+    id: did-happen
+    attributes:
+      label: What did happen?
+      description: Details can help.
+    validations:
+      required: true
+  - type: textarea
+    id: reprduction
+    attributes:
+      label: How do you make it happen again?
+      description: Is there a way to reproduce the bug?

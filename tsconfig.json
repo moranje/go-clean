@@ -2,5 +2,8 @@
   "extends": "@tsconfig/node-lts/tsconfig.json",
   "compilerOptions": {
     "outDir": "dist",
+    "module": "node16",
+		"moduleResolution": "node16",
+    "pretty": true
   },
 }

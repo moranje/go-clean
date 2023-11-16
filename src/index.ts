@@ -2,6 +2,7 @@
 
 import ora from 'ora';
 import figlet from 'figlet';
+import kleur from 'kleur';
 import { writeFile } from 'fs';
 import { download } from './lib/download.js';
 import stringbuilder from './lib/stringbuilder.js';
@@ -12,7 +13,7 @@ const masterLeague = 'https://pvpoke.com/rankings/all/10000/overall/';
 
 console.log(figlet.textSync('Go clean!'));
 const spinner = ora({
-  text: 'Finding latest rankings on PvPoke',
+  text: `Finding latest rankings on ${kleur.blue().bold('PvPoke.com')}`,
   spinner: 'simpleDotsScrolling',
 }).start();
 
@@ -87,7 +88,9 @@ download(greatLeague)
         }
 
         spinner.succeed(
-          "Successfully written search strings to './resources/search-strings.json'"
+          `Successfully written search strings to ${kleur
+            .blue()
+            .underline('./resources/search-strings.json')}`
         );
       }
     );

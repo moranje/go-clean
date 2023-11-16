@@ -32,4 +32,4 @@ jobs:
       - name: Gather data 📥
         run: go-clean
 
-      - name: Publish website
+      # - name: Publish website

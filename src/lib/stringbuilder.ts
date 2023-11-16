@@ -99,10 +99,12 @@ export default function stringbuilder() {
     /**
      * Maximize cp of the searched pokemon
      *
-     * @param cp cp-500 | cp-1500 | cp-2500 | shadow | age |
+     * @param cp 1500 | 2500
      * @returns
      */
-    cp(cp: 500 | 1500 | 2500) {
+    cp(cp: 1500 | 2500 | null) {
+      if (!cp) return this;
+
       $cp = `&cp-${cp}`;
 
       return this;

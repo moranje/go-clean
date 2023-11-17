@@ -1,3 +1,6 @@
+
+![Go clean](https://github.com/moranje/go-clean/assets/666528/46846c93-9d66-40a6-9431-7c25bd1c8dd0)
+
 # Go Clean
 
 Is it Go clean? (You go clean!) Or clean as a way Going? Who knows? What we do know is that there are a lot of Mon eating away your storage. What to keep and what to blast to the professor faster than a hungry ninjask looking for on feed on tree sap.

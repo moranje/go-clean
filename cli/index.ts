@@ -51,7 +51,7 @@ download(greatLeague)
         spinner.succeed(
           `Successfully written search strings to ${kleur
             .blue()
-            .underline('./resources/search-strings.json')}`
+            .underline('./src/search-strings.json')}`
         );
       }
     );

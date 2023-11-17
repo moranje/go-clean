@@ -1,36 +1,23 @@
 {
   "name": "go-clean",
+  "private": true,
   "version": "1.0.0",
   "description": "Your storage is full of messy pokémon, go clean!",
   "type": "module",
-  "exports": "./index.js",
-  "engines": {
-    "node": ">=16"
-  },
   "scripts": {
-    "build": "tsc",
-    "dev": "npm run build && node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "cd node_modules/.bin && ln -sf ../../dist/index.js go-clean"
+    "dev": "vite",
+    "dev-cli": "cd cli && npm run dev",
+    "build": "tsc && vite build",
+    "build-cli": "cd cli && npm run build",
+    "preview": "vite preview",
+    "postinstall": "cd cli && npm install"
   },
-  "bin": {
-    "go-clean": "./dist/index.js"
-  },
-  "author": "M. Oranje",
-  "license": "MIT",
   "dependencies": {
-    "figlet": "^1.7.0",
-    "kleur": "^4.1.5",
-    "ora": "^7.0.1",
-    "puppeteer": "^21.5.1"
-  },
-  "puppeteer": {
-    "logLevel": "error"
+    "solid-js": "^1.8.5"
   },
   "devDependencies": {
-    "@tsconfig/node-lts": "^18.12.5",
-    "@types/figlet": "^1.5.8",
-    "@types/node": "^20.9.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0",
+    "vite-plugin-solid": "^2.7.2"
   }
 }

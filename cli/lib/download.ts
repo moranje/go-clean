@@ -1,6 +1,22 @@
 import puppeteer from 'puppeteer';
+import { readFileSync } from 'node:fs';
+import { readFile, writeFile } from 'node:fs/promises';
 
 export async function download(url: string) {
+  let cache: { [key: string]: { data: any; timestamp: number } } = {};
+  try {
+    cache = JSON.parse((await readFile('./.cache', 'utf8')) || '{}');
+  } catch {}
+
+  // Read from cache
+  if (
+    cache[url] &&
+    Date.now() - cache[url].timestamp <
+      /* 1 week in ms */ 7 * 24 * 60 * 60 * 1000
+  ) {
+    return cache[url].data;
+  }
+
   let browser;
   try {
     // Launch the browser and open a new blank page
@@ -32,6 +48,10 @@ export async function download(url: string) {
         'Scraping PVPoke returned no rankings, it is likely that the sites markup has changed enough to break the scraper.'
       );
     }
+
+    // Create cache
+    cache[url] = { data: rankings, timestamp: Date.now() };
+    await writeFile('./.cache', JSON.stringify(cache));
 
     return rankings;
   } catch (error) {

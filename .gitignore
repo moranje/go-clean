@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 searches.json
+.cache
 
 # Editor directories and files
 .vscode/*

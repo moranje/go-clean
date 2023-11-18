@@ -87,12 +87,13 @@ export default function stringbuilder() {
     },
 
     /**
-     * Find special pokemon: `shiny`, `lucky`, `legendary`, `mythical`, `special`,
-     * `costume`.
+     * Filter special pokemon.
      *
      * @returns this
      */
-    special() {
+    special(ignore?: boolean) {
+      if (ignore === true) return this;
+
       this.add(special);
 
       return this;

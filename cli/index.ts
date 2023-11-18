@@ -84,8 +84,8 @@ program
     'Great, ultra or master leaque (required)'
   )
   .option('-s,  --size <number>', 'The size of the pokemon list', '50')
-  .option('-sp, --special', 'Include special', false)
   .option('-c,  --cp <number>', 'Maximize by by CP')
+  .option('-sp, --special', 'Include special', false)
   .option('-hd, --hide', 'Hide selected pokemon from search', false)
   .helpOption('-h,  --help', 'Display help for command')
   .action((options) => {
@@ -96,11 +96,11 @@ program
     )
       .then((rankings) => {
         spinner.succeed(
-          `Got it! Use this to select pokemon:\n\n${kleur.blue().underline(
+          `Got it! Use this to select pokemon:\n\n${kleur.blue(
             stringbuilder()
-              .add(rankings)
+              .addPokemon(rankings)
               .cap(+options.size)
-              .special()
+              .special(!options.special)
               .negate(!options.hide)
               .cp(options.cp)
               .string(options.hide ? ',' : '&')

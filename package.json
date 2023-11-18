@@ -11,7 +11,7 @@
     "build-cli": "cd cli && npm run build",
     "preview": "vite preview",
     "postinstall": "cd cli && npm install",
-    "go-clean": "node ./cli/dist/index.js --out=src/search-strings.json"
+    "go-clean": "node ./cli/dist/index.js file --out src/searches.json"
   },
   "dependencies": {
     "solid-js": "^1.8.5"

@@ -46,7 +46,7 @@ export function all(
  * @param caps The amount of pokemon included
  * @returns
  */
-export function league(
+export function build(
   rankings: string[],
   cp: 1500 | 2500 | null,
   caps: number[]

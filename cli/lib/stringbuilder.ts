@@ -78,7 +78,9 @@ export default function stringbuilder() {
      *
      * @returns this
      */
-    negate() {
+    negate(ignore?: boolean) {
+      if (ignore === true) return this;
+
       store = new Set([...this.list().map((item) => `!${item}`)]);
 
       return this;

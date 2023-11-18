@@ -3,22 +3,23 @@
   "version": "1.0.0",
   "description": "Your storage is full of messy pokémon, go clean!",
   "type": "module",
-  "exports": "./index.js",
+  "exports": "./dist/index.js",
   "engines": {
-    "node": ">=16"
+    "node": ">=20.6.1"
   },
   "scripts": {
     "build": "tsc",
-    "dev": "npm run build && node dist/cli/index.js",
+    "dev": "npm run build && node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "tsc && cd ../node_modules/.bin && ln -sf ../../dist/cli/index.js go-clean"
+    "postinstall": "tsc"
   },
   "bin": {
-    "go-clean": "./dist/cli/index.js"
+    "go-clean": "./dist/index.js"
   },
   "author": "M. Oranje",
   "license": "MIT",
   "dependencies": {
+    "commander": "^11.1.0",
     "figlet": "^1.7.0",
     "kleur": "^4.1.5",
     "ora": "^7.0.1",
